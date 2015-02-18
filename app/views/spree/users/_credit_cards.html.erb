@@ -1,0 +1,26 @@
+<br/>
+<div data-hook="credit_card_account_my_orders" class="account-my-orders">
+	<h3><%= t(:my_credit_cards) %></h3>
+	<% if try_spree_current_user.try(:credit_cards).present? && !try_spree_current_user.credit_cards.remembered.blank? %>
+	<table id="user_credit_cards">
+	  <tbody>
+	    <% try_spree_current_user.credit_cards.remembered.each do |credit_card| %>
+	    <tr class="<%= cycle('even', 'odd') %>">
+	      <td>XXXX-XXXX-XXXX-<%= credit_card.last_digits %></td>
+	      <td><%= credit_card.month %>&nbsp;/&nbsp;<%= credit_card.year %></td>
+	      <td>
+	        <%= link_to Spree.t(:remove), forget_credit_card_account_path(credit_card_id: credit_card.id), { :method => :delete, data: {:confirm => Spree.t(:are_you_sure)} } %>
+	      </td>
+	    </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+	<% else %>
+	<div id="users-address-list-empty">
+	  <%= I18n.t('memorable_payment_profile.no_credit_cards_on_file') %>
+	</div>
+	<% end %>
+	<div id="users-address-list-empty">
+	  <%= I18n.t('memorable_payment_profile.add_a_credit_card') %>
+	</div>
+</div>

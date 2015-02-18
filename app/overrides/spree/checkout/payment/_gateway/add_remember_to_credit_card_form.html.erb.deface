@@ -1,0 +1,2 @@
+<!-- insert_after "erb[loud]:contains('cc_type')" -->
+ <%= check_box_tag "#{param_prefix}[remember]", 1, true, options_hash.merge(:id => 'remember', :class => 'required cardCode') %>&nbsp;-&nbsp;<%= t("memorable_payment_profile.remember_my_credit_card")%>

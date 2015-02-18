@@ -1,0 +1,11 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  memorable_payment_profile:
+    remember_my_credit_card: "Remember my credit card for next time."
+    no_credit_cards_on_file: "You currently have no credit cards on file."
+    add_a_credit_card: "To add a card, please choose to 'Remember my credit card' on your next order."
+    credit_card_forgotten: "Credit card no longer automatically available for purchases."
+    failed_to_forget_credit_card: "Failed to remove credit card.  Please email us for assistance."
+    my_credit_cards: "My Credit Cards"
